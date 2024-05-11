@@ -1,11 +1,41 @@
 // import node module libraries
 import { Row, Col, Card, Form, Button, Image } from "react-bootstrap";
+import { createToken, setTokenCookie } from "components/server/server-helpers";
+import { useForm } from 'react-hook-form';
 import Link from "next/link";
 
 // import authlayout to override default layout
 import AuthLayout from "layouts/AuthLayout";
 
 const SignIn = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    const { username, password } = data;
+    const payload = {
+      username: username,
+      password: password,
+    };
+
+    fetch("/api/auth", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (res.ok) {
+          const token = createToken({ username });
+          setTokenCookie(token);
+          window.location.href = "/";
+        }
+      })
+      .catch((error) => {
+        console.error("Error logging in", error);
+      });
+  };
+
   return (
     <Row className="align-items-center justify-content-center g-0 min-vh-100">
       <Col xxl={4} lg={6} md={8} xs={12} className="py-8 py-xl-0">
@@ -26,16 +56,17 @@ const SignIn = () => {
               <p className="mb-6">Hãy điền thông tin tài khoản của bạn.</p>
             </div>
             {/* Form */}
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               {/* Username */}
               <Form.Group className="mb-3" controlId="username">
-                <Form.Label>Tên người dùng hoặc email</Form.Label>
+                <Form.Label>Username</Form.Label>
                 <Form.Control
-                  type="email"
+                  type="text"
                   name="username"
-                  placeholder="Nhập tên người dùng hoặc email của bạn"
-                  required=""
+                  placeholder="Nhập tên người dùng của bạn"
+                  {...register('username', { required: true })}
                 />
+                {errors.username && <span>This field is required</span>}
               </Form.Group>
 
               {/* Password */}
@@ -45,8 +76,9 @@ const SignIn = () => {
                   type="password"
                   name="password"
                   placeholder="**************"
-                  required=""
+                  {...register('password', { required: true })}
                 />
+                {errors.password && <span>This field is required</span>}
               </Form.Group>
 
               {/* Checkbox */}
@@ -63,21 +95,21 @@ const SignIn = () => {
                     Đăng nhập
                   </Button>
                 </div>
-                <div className="d-md-flex justify-content-between mt-4">
-                  <div className="mb-2 mb-md-0">
-                    <Link href="/authentication/sign-up" className="fs-5">
-                      Đăng ký một tài khoản{" "}
-                    </Link>
-                  </div>
-                  <div>
-                    <Link
-                      href="/authentication/forget-password"
-                      className="text-inherit fs-5"
-                    >
-                      Quên mật khẩu?
-                    </Link>
-                  </div>
-                </div>
+                {/*<div className="d-md-flex justify-content-between mt-4">*/}
+                {/*  <div className="mb-2 mb-md-0">*/}
+                {/*    <Link href="/authentication/sign-up" className="fs-5">*/}
+                {/*      Đăng ký một tài khoản{" "}*/}
+                {/*    </Link>*/}
+                {/*  </div>*/}
+                {/*  <div>*/}
+                {/*    <Link*/}
+                {/*      href="/authentication/forget-password"*/}
+                {/*      className="text-inherit fs-5"*/}
+                {/*    >*/}
+                {/*      Quên mật khẩu?*/}
+                {/*    </Link>*/}
+                {/*  </div>*/}
+                {/*</div>*/}
               </div>
             </Form>
           </Card.Body>

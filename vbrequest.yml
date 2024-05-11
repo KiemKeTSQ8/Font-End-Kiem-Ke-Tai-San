@@ -1,0 +1,91 @@
+groups:
+  chucvu:
+    server-choosing: 2
+    servers:
+      '1':
+        url: http://localhost:8080/chucvu
+        token: token
+      '2':
+        url: http://localhost:8080/chucvu
+        token: token
+  chitietkiemke:
+    server-choosing: 2
+    servers:
+      '1':
+        url: http://localhost:8080/chitietkiemke
+        token: token
+      '2':
+        url: http://localhost:8080/chitietkiemke
+        token: token
+  donvisohuu:
+    server-choosing: 2
+    servers:
+      '1':
+        url: http://localhost:8080/donvisohuu
+        token: token
+      '2':
+        url: http://localhost:8080/donvisohuu
+        token: token
+  kiemke:
+    server-choosing: 1
+    servers:
+      '1':
+        url: http://localhost:8080/kiemke
+        token: token
+      '2':
+        url: http://localhost:8080/kiemke
+        token: token
+  lichsukiemke:
+    server-choosing: 2
+    servers:
+      '1':
+        url: http://localhost:8080/lichsukiemke
+        token: token
+      '2':
+        url: http://localhost:8080/lichsukiemke
+        token: token
+  loaitaisan:
+    server-choosing: 1
+    servers:
+      '1':
+        url: http://localhost:8080/loaitaisan
+        token: token
+      '2':
+        url: http://localhost:8080/loaitaisan
+        token: token
+  nguoidung:
+    server-choosing: 1
+    servers:
+      '1':
+        url: http://localhost:8080/nguoidung
+        token: token
+      '2':
+        url: http://localhost:8080/nguoidung
+        token: token
+  nhanvien:
+    server-choosing: 1
+    servers:
+      '1':
+        url: http://localhost:8080/nhanvien
+        token: token
+      '2':
+        url: http://localhost:8080/nhanvien
+        token: token
+  phongban:
+    server-choosing: 1
+    servers:
+      '1':
+        url: http://localhost:8080/phongban
+        token: token
+      '2':
+        url: http://localhost:8080/phongban
+        token: token
+  taisan:
+    server-choosing: 2
+    servers:
+      '1':
+        url: http://localhost:8080/taisan
+        token: token
+      '2':
+        url: http://localhost:8080/taisan
+        token: token

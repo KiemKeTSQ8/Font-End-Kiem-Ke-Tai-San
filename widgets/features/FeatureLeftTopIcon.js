@@ -4,7 +4,7 @@
 // import node module libraries
 import PropTypes from 'prop-types';
 
-const FeatureLeftTopIcon = ({ item }) => {
+const FeatureLeftTopIcon = ({item}) => {
     return (
         <div className="mb-6">
             <div className="icon-shape icon-lg bg-primary rounded-3 mb-4">

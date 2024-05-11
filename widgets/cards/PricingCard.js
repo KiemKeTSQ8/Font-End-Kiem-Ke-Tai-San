@@ -1,22 +1,22 @@
 // import node module libraries
-import { ListGroup, Card } from 'react-bootstrap';
+import {ListGroup, Card} from 'react-bootstrap';
 import Link from 'next/link';
 
-const PricingCard = ({ content }) => {
+const PricingCard = ({content}) => {
     let plan = content[0];
     return (
         <Card>
             <Card.Body className="p-6 border-bottom mb-4">
                 {/* text */}
                 <h2 className="mb-3">{plan.plantitle}</h2>
-                <p className="mb-0" dangerouslySetInnerHTML={{ __html: plan.description }}></p>
+                <p className="mb-0" dangerouslySetInnerHTML={{__html: plan.description}}></p>
                 {/* price */}
                 <div className="d-flex align-items-end mt-6 mb-3">
                     <h1 className="fw-bold me-1 mb-0">${plan.monthly} </h1>
                     <p className="mb-0">/mo</p>
                 </div>
                 <Link href="#" className={`btn btn-${plan.buttonClass ? plan.buttonClass : 'outline-primary'
-                    }`}>
+                }`}>
                     {plan.buttonText}
                 </Link>
             </Card.Body>
@@ -34,7 +34,7 @@ const PricingCard = ({ content }) => {
                                     <i className="far fa-check-circle"></i>
                                 </span>
                                 <span
-                                    dangerouslySetInnerHTML={{ __html: item.feature }}
+                                    dangerouslySetInnerHTML={{__html: item.feature}}
                                 ></span>
                             </ListGroup.Item>
                         );

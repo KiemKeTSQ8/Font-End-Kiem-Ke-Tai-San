@@ -1,15 +1,15 @@
 // import node module libraries
 import React from "react";
 import Link from 'next/link';
-import { Col, Card, Dropdown, Image } from 'react-bootstrap';
-import { MoreVertical } from 'react-feather';
+import {Col, Card, Dropdown, Image} from 'react-bootstrap';
+import {MoreVertical} from 'react-feather';
 
 // import required data files
 import ProjectsContributionsData from 'data/profile/ProjectsContributionsData';
 
 const ProjectsContributions = () => {
 
-    const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+    const CustomToggle = React.forwardRef(({children, onClick}, ref) => (
         (<Link
             href=""
             ref={ref}
@@ -28,7 +28,7 @@ const ProjectsContributions = () => {
         return (
             <Dropdown>
                 <Dropdown.Toggle as={CustomToggle}>
-                    <MoreVertical size="15px" className="text-muted" />
+                    <MoreVertical size="15px" className="text-muted"/>
                 </Dropdown.Toggle>
                 <Dropdown.Menu align={'end'}>
                     <Dropdown.Item eventKey="1">
@@ -56,7 +56,7 @@ const ProjectsContributions = () => {
                                 <div className="d-flex align-items-center">
                                     <div>
                                         <div className={`icon-shape icon-md border p-4 rounded-1 ${item.brandLogoBg}`}>
-                                            <Image src={item.brandLogo} alt="" />
+                                            <Image src={item.brandLogo} alt=""/>
                                         </div>
                                     </div>
                                     {/* text */}
@@ -73,7 +73,7 @@ const ProjectsContributions = () => {
                                         {item.members.map((avatar, avatarIndex) => {
                                             return (
                                                 <span className="avatar avatar-sm" key={avatarIndex}>
-                                                    <Image alt="avatar" src={avatar.image} className="rounded-circle" />
+                                                    <Image alt="avatar" src={avatar.image} className="rounded-circle"/>
                                                 </span>
                                             )
                                         })}

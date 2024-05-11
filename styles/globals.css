@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#dialog {
+    display: none; /* Ẩn dialog ban đầu */
+}
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu che mờ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Thiết lập z-index cao hơn */
+}
+
+.dialog {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 600px;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Thiết lập z-index cao hơn so với dialog-overlay */
+}
+
+.dialog .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dialog .dialog-header h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 5); /* Màu nền mờ */
+    z-index: 9999; /* Đảm bảo nó nằm trên tất cả các phần tử khác */
+    display: flex;
+}

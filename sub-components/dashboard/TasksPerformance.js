@@ -1,17 +1,17 @@
 // import node module libraries
 import React from "react";
 import Link from 'next/link';
-import { Card, Dropdown } from 'react-bootstrap';
-import { MoreVertical } from 'react-feather';
+import {Card, Dropdown} from 'react-bootstrap';
+import {MoreVertical} from 'react-feather';
 import dynamic from 'next/dynamic'
 
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+const Chart = dynamic(() => import('react-apexcharts'), {ssr: false});
 
 const TasksPerformance = () => {
 
     const perfomanceChartSeries = [100, 78, 89];
     const perfomanceChartOptions = {
-        dataLabels: { enabled: !1 },
+        dataLabels: {enabled: !1},
         labels: ['Direct', 'Referral', 'Organic'],
         colors: ['#28a745', '#ffc107', '#dc3545'],
         plotOptions: {
@@ -29,8 +29,8 @@ const TasksPerformance = () => {
                 }
             }
         },
-        chart: { type: 'radialBar' },
-        stroke: { lineCap: "round" },
+        chart: {type: 'radialBar'},
+        stroke: {lineCap: "round"},
         responsive: [
             {
                 breakpoint: 480,
@@ -51,7 +51,7 @@ const TasksPerformance = () => {
         ]
     };
 
-    const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+    const CustomToggle = React.forwardRef(({children, onClick}, ref) => (
         (<Link
             href=""
             ref={ref}
@@ -70,7 +70,7 @@ const TasksPerformance = () => {
         return (
             <Dropdown>
                 <Dropdown.Toggle as={CustomToggle}>
-                    <MoreVertical size="15px" className="text-muted" />
+                    <MoreVertical size="15px" className="text-muted"/>
                 </Dropdown.Toggle>
                 <Dropdown.Menu align={'end'}>
                     <Dropdown.Item eventKey="1">
@@ -95,10 +95,10 @@ const TasksPerformance = () => {
                     <div>
                         <h4 className="mb-0">Tasks Performance </h4>
                     </div>
-                    <ActionMenu />
+                    <ActionMenu/>
                 </div>
                 <div className="mb-8">
-                    <Chart options={perfomanceChartOptions} series={perfomanceChartSeries} type="radialBar" />
+                    <Chart options={perfomanceChartOptions} series={perfomanceChartSeries} type="radialBar"/>
                 </div>
                 {/* icon with content  */}
                 <div className="d-flex align-items-center justify-content-around">

@@ -16,14 +16,13 @@ const ForgetPassword = () => {
             <div className="mb-4">
               <Link href="/">
                 <Image
-                  src="/images/brand/logo/logo-primary.svg"
+                  src="/images/brand/logo/Contact icon 3d vector illustration.jpg"
                   className="mb-2"
                   alt=""
                 />
               </Link>
               <p className="mb-6">
-                Don&apos;t worry, we&apos;ll send you an email to reset your
-                password.
+                Đừng lo lắng, chỉ cần nhập email của bạn và chúng tôi sẽ gửi
               </p>
             </div>
             {/* Form */}
@@ -34,18 +33,18 @@ const ForgetPassword = () => {
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Enter Your Email"
+                  placeholder="Nhập email của bạn"
                 />
               </Form.Group>
               {/* Button */}
               <div className="mb-3 d-grid">
                 <Button variant="primary" type="submit">
-                  Reset Password
+                  Thiết lập lại mật khẩu
                 </Button>
               </div>
               <span>
-                Don&apos;t have an account?{" "}
-                <Link href="/authentication/sign-in">Sign In</Link>
+                Không có tài khoản?{" "}
+                <Link href="/authentication/sign-in">Đăng Nhập</Link>
               </span>
             </Form>
           </Card.Body>
